@@ -1,0 +1,21 @@
+{
+  "engineName": "mrs-products",
+  "endpointBase": "http://localhost:3002",
+  "searchKey": "search-vmbs6jsgumq98jjewwfzvsg4",
+  "resultFields": [
+    "product_group_id",
+    "item_desc",
+    "item_id",
+    "extended_desc",
+    "inv_mast_uid",
+    "id"
+  ],
+  "sortFields": [
+
+  ],
+  "facets": [
+    "product_group_id"
+  ],
+  "titleField": "item_id",
+  "urlField": "inv_mast_uid"
+}
