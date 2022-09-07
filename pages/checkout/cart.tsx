@@ -10,7 +10,7 @@ const products = [
         color: 'Sienna',
         inStock: true,
         size: 'Large',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
         imageAlt: "Front of men's Basic Tee in sienna.",
     },
     {
@@ -22,7 +22,7 @@ const products = [
         inStock: false,
         leadTime: '3–4 weeks',
         size: 'Large',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
         imageAlt: "Front of men's Basic Tee in black.",
     },
     {
@@ -32,7 +32,172 @@ const products = [
         price: '$35.00',
         color: 'White',
         inStock: true,
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-03.jpg',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
+        imageAlt: 'Insulated bottle with white base and black snap lid.',
+    },
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Sienna',
+        inStock: true,
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
+        imageAlt: "Front of men's Basic Tee in sienna.",
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Black',
+        inStock: false,
+        leadTime: '3–4 weeks',
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
+        imageAlt: "Front of men's Basic Tee in black.",
+    },
+    {
+        id: 3,
+        name: 'Nomad Tumbler',
+        href: '#',
+        price: '$35.00',
+        color: 'White',
+        inStock: true,
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
+        imageAlt: 'Insulated bottle with white base and black snap lid.',
+    },
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Sienna',
+        inStock: true,
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
+        imageAlt: "Front of men's Basic Tee in sienna.",
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Black',
+        inStock: false,
+        leadTime: '3–4 weeks',
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
+        imageAlt: "Front of men's Basic Tee in black.",
+    },
+    {
+        id: 3,
+        name: 'Nomad Tumbler',
+        href: '#',
+        price: '$35.00',
+        color: 'White',
+        inStock: true,
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
+        imageAlt: 'Insulated bottle with white base and black snap lid.',
+    },
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Sienna',
+        inStock: true,
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
+        imageAlt: "Front of men's Basic Tee in sienna.",
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Black',
+        inStock: false,
+        leadTime: '3–4 weeks',
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
+        imageAlt: "Front of men's Basic Tee in black.",
+    },
+    {
+        id: 3,
+        name: 'Nomad Tumbler',
+        href: '#',
+        price: '$35.00',
+        color: 'White',
+        inStock: true,
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
+        imageAlt: 'Insulated bottle with white base and black snap lid.',
+    },
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Sienna',
+        inStock: true,
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
+        imageAlt: "Front of men's Basic Tee in sienna.",
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Black',
+        inStock: false,
+        leadTime: '3–4 weeks',
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
+        imageAlt: "Front of men's Basic Tee in black.",
+    },
+    {
+        id: 3,
+        name: 'Nomad Tumbler',
+        href: '#',
+        price: '$35.00',
+        color: 'White',
+        inStock: true,
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
+        imageAlt: 'Insulated bottle with white base and black snap lid.',
+    },
+    {
+        id: 1,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Sienna',
+        inStock: true,
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/61b577e6-afd9-4eff-f585-7a769ab6ee00/p',
+        imageAlt: "Front of men's Basic Tee in sienna.",
+    },
+    {
+        id: 2,
+        name: 'Basic Tee',
+        href: '#',
+        price: '$32.00',
+        color: 'Black',
+        inStock: false,
+        leadTime: '3–4 weeks',
+        size: 'Large',
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/dde07630-57e4-408e-e1e9-914681433100/p',
+        imageAlt: "Front of men's Basic Tee in black.",
+    },
+    {
+        id: 3,
+        name: 'Nomad Tumbler',
+        href: '#',
+        price: '$35.00',
+        color: 'White',
+        inStock: true,
+        imageSrc: 'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/92a9c930-dafd-4828-f63d-15b639e69700/p',
         imageAlt: 'Insulated bottle with white base and black snap lid.',
     },
 ]
@@ -56,7 +221,7 @@ const Cart: NextPage =() => {
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.imageAlt}
-                                                className="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
+                                                className="w-24 h-24 rounded-md object-center object-contain sm:w-48 sm:h-48"
                                             />
                                         </div>
 
@@ -125,47 +290,16 @@ const Cart: NextPage =() => {
                         {/* Order summary */}
                         <section
                             aria-labelledby="summary-heading"
-                            className="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
+                            className="mb-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mb-0 lg:col-span-5"
                         >
-                            <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
-                                Order summary
-                            </h2>
-
-                            <dl className="mt-6 space-y-4">
-                                <div className="flex items-center justify-between">
-                                    <dt className="text-sm text-gray-600">Subtotal</dt>
-                                    <dd className="text-sm font-medium text-gray-900">$99.00</dd>
-                                </div>
-                                <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
-                                    <dt className="flex items-center text-sm text-gray-600">
-                                        <span>Shipping estimate</span>
-                                        <a href="pages/checkout/cart#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                                            <span className="sr-only">Learn more about how shipping is calculated</span>
-                                            <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
-                                        </a>
-                                    </dt>
-                                    <dd className="text-sm font-medium text-gray-900">$5.00</dd>
-                                </div>
-                                <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
-                                    <dt className="flex text-sm text-gray-600">
-                                        <span>Tax estimate</span>
-                                        <a href="pages/checkout/cart#" className="ml-2 flex-shrink-0 text-gray-400 hover:text-gray-500">
-                                            <span className="sr-only">Learn more about how tax is calculated</span>
-                                            <QuestionMarkCircleIcon className="h-5 w-5" aria-hidden="true" />
-                                        </a>
-                                    </dt>
-                                    <dd className="text-sm font-medium text-gray-900">$8.32</dd>
-                                </div>
-                                <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
-                                    <dt className="text-base font-medium text-gray-900">Order total</dt>
-                                    <dd className="text-base font-medium text-gray-900">$112.32</dd>
-                                </div>
-                            </dl>
-
+                            <div className="pt-4 flex items-center justify-between">
+                                <dt className="text-base font-medium text-gray-900">Order total</dt>
+                                <dd className="text-base font-medium text-gray-900">$112.32</dd>
+                            </div>
                             <div className="mt-6">
                                 <button
                                     type="submit"
-                                    className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
+                                    className="w-full bg-safety-red border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-raisin-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
                                 >
                                     Checkout
                                 </button>

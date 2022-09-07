@@ -45,12 +45,12 @@ export const Footer: NextComponentType =() => {
                  <h2 id="footer-heading" className="sr-only">
                      Footer
                  </h2>
-                 <div className="bg-calm-blue mx-auto px-4 sm:px-6 lg:px-8">
+                 <div className="bg-calm-blue mx-auto px-4 sm:px-6 lg:px-8 dark:bg-raisin-black">
                      <div className="border-t border-gray-200">
                          <div className="pt-16 pb-20">
                              <div className="md:flex md:justify-center">
                                  <img
-                                     src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/04dae379-5cb1-4571-a9aa-3988ab065f00/p"
+                                     src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/10b62db2-d563-45b4-0d6e-70492acab200/p"
                                      alt=""
                                      width={100}
                                  />
@@ -134,7 +134,7 @@ export const Footer: NextComponentType =() => {
                                          <div className="mt-3 sm:flex-shrink-0 sm:mt-0 sm:ml-4">
                                              <button
                                                  type="submit"
-                                                 className="w-full bg-safety-red border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-calm-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-500"
+                                                 className="w-full bg-safety-red border border-transparent rounded-md shadow-sm py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-raisin-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-500"
                                              >
                                                  Sign up
                                              </button>
@@ -147,13 +147,13 @@ export const Footer: NextComponentType =() => {
 
                      <div className="py-10 md:flex md:items-center md:justify-between">
                          <div className="text-center md:text-left">
-                             <p className="text-sm text-calm-blue">&copy; 2021 All Rights Reserved</p>
+                             <p className="text-sm text-laurel">&copy; 2021 All Rights Reserved</p>
                          </div>
 
                          <div className="mt-4 flex items-center justify-center md:mt-0">
                              <div className="flex space-x-8">
                                  {footerNavigation.bottomLinks.map((item) => (
-                                     <a key={item.name} href={item.href} className="text-sm text-calm-blue hover:text-gray-600">
+                                     <a key={item.name} href={item.href} className="text-sm text-laurel hover:text-mountbatten">
                                          {item.name}
                                      </a>
                                  ))}

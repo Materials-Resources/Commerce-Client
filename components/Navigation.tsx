@@ -10,11 +10,11 @@ import Link from "next/link";
 const navigation = {
     categories: [
         {
-            name: 'Tools',
+            name: 'Products',
             featured: [
-                { name: 'Sleep', href: '#' },
-                { name: 'Swimwear', href: '#' },
-                { name: 'Underwear', href: '#' },
+                { name: 'Safety', href: '#' },
+                { name: 'Abrasives', href: '#' },
+                { name: 'Armour Guys', href: '#' },
             ],
             collection: [
                 { name: 'Everything', href: '#' },
@@ -22,24 +22,11 @@ const navigation = {
                 { name: 'New Arrivals', href: '#' },
                 { name: 'Sale', href: '#' },
             ],
-            categories: [
-                { name: 'Basic Tees', href: '#' },
-                { name: 'Artwork Tees', href: '#' },
-                { name: 'Bottoms', href: '#' },
-                { name: 'Underwear', href: '#' },
-                { name: 'Accessories', href: '#' },
-            ],
-            brands: [
-                { name: 'Full Nelson', href: '#' },
-                { name: 'My Way', href: '#' },
-                { name: 'Re-Arranged', href: '#' },
-                { name: 'Counterfeit', href: '#' },
-                { name: 'Significant Other', href: '#' },
-            ],
         }
     ],
     pages: [
-        { name: 'Company', href: '#' },
+        { name: 'About Our Company', href: '#' },
+        { name: 'Careers', href: '#'}
     ],
 }
 
@@ -77,7 +64,7 @@ export const Navigation: NextComponentType =() => {
                             leaveFrom="translate-x-0"
                             leaveTo="-translate-x-full"
                         >
-                            <Dialog.Panel className="relative max-w-xs w-full bg-notebook shadow-xl pb-12 flex flex-col overflow-y-auto">
+                            <Dialog.Panel className="relative max-w-xs w-full bg-calm-blue shadow-xl pb-12 flex flex-col overflow-y-auto text-white dark:bg-raisin-black">
                                 <div className="px-4 pt-5 pb-2 flex">
                                     <button
                                         type="button"
@@ -98,7 +85,7 @@ export const Navigation: NextComponentType =() => {
                                                     key={category.name}
                                                     className={({ selected }) =>
                                                         classNames(
-                                                            selected ? 'text-calm-blue border-safety-red' : 'text-gray-900 border-transparent',
+                                                            selected ? 'border-safety-red' : 'text-gray-900 border-transparent',
                                                             'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
                                                         )
                                                     }
@@ -114,7 +101,7 @@ export const Navigation: NextComponentType =() => {
                                                 <div className="grid grid-cols-1 items-start gap-y-10 gap-x-6">
                                                     <div className="grid grid-cols-1 gap-y-10 gap-x-6">
                                                         <div>
-                                                            <p id={`mobile-featured-heading-${categoryIdx}`} className="font-medium text-gray-900">
+                                                            <p id={`mobile-featured-heading-${categoryIdx}`} className="font-medium">
                                                                 Featured
                                                             </p>
                                                             <ul
@@ -124,21 +111,7 @@ export const Navigation: NextComponentType =() => {
                                                             >
                                                                 {category.featured.map((item) => (
                                                                     <li key={item.name} className="flex">
-                                                                        <a href={item.href} className="text-calm-blue">
-                                                                            {item.name}
-                                                                        </a>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                        <div>
-                                                            <p id="mobile-categories-heading" className="font-medium text-gray-900">
-                                                                Categories
-                                                            </p>
-                                                            <ul role="list" aria-labelledby="mobile-categories-heading" className="mt-6 space-y-6">
-                                                                {category.categories.map((item) => (
-                                                                    <li key={item.name} className="flex">
-                                                                        <a href={item.href} className="text-calm-blue">
+                                                                        <a href={item.href} className="">
                                                                             {item.name}
                                                                         </a>
                                                                     </li>
@@ -153,21 +126,6 @@ export const Navigation: NextComponentType =() => {
                                                             </p>
                                                             <ul role="list" aria-labelledby="mobile-collection-heading" className="mt-6 space-y-6">
                                                                 {category.collection.map((item) => (
-                                                                    <li key={item.name} className="flex">
-                                                                        <a href={item.href} className="text-gray-500">
-                                                                            {item.name}
-                                                                        </a>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-
-                                                        <div>
-                                                            <p id="mobile-brand-heading" className="font-medium text-gray-900">
-                                                                Brands
-                                                            </p>
-                                                            <ul role="list" aria-labelledby="mobile-brand-heading" className="mt-6 space-y-6">
-                                                                {category.brands.map((item) => (
                                                                     <li key={item.name} className="flex">
                                                                         <a href={item.href} className="text-gray-500">
                                                                             {item.name}
@@ -192,19 +150,6 @@ export const Navigation: NextComponentType =() => {
                                         </div>
                                     ))}
                                 </div>
-
-                                <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                    <div className="flow-root">
-                                        <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
-                                            Create an account
-                                        </a>
-                                    </div>
-                                    <div className="flow-root">
-                                        <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
-                                            Sign in
-                                        </a>
-                                    </div>
-                                </div>
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
@@ -214,7 +159,7 @@ export const Navigation: NextComponentType =() => {
             <header className="relative z-10">
                 <nav aria-label="Top">
                     {/* Secondary navigation */}
-                    <div className="bg-calm-blue text-white">
+                    <div className="bg-calm-blue">
                         <div className="border-b border-gray-200">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <div className="h-28 flex items-center justify-between">
@@ -241,9 +186,9 @@ export const Navigation: NextComponentType =() => {
                                                                     <Popover.Button
                                                                         className={classNames(
                                                                             open
-                                                                                ? 'border-indigo-600 text-white'
+                                                                                ? 'border-indigo-600'
                                                                                 : 'border-transparent hover:text-gray-800',
-                                                                            'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
+                                                                            'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px text-white'
                                                                         )}
                                                                     >
                                                                         {category.name}
@@ -270,7 +215,7 @@ export const Navigation: NextComponentType =() => {
                                                                                         <div>
                                                                                             <p
                                                                                                 id={`desktop-featured-heading-${categoryIdx}`}
-                                                                                                className="font-medium text-gray-900"
+                                                                                                className="font-medium"
                                                                                             >
                                                                                                 Featured
                                                                                             </p>
@@ -280,24 +225,6 @@ export const Navigation: NextComponentType =() => {
                                                                                                 className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                                                                             >
                                                                                                 {category.featured.map((item) => (
-                                                                                                    <li key={item.name} className="flex">
-                                                                                                        <a href={item.href} className="hover:text-gray-800">
-                                                                                                            {item.name}
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                ))}
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                        <div>
-                                                                                            <p id="desktop-categories-heading" className="font-medium text-gray-900">
-                                                                                                Categories
-                                                                                            </p>
-                                                                                            <ul
-                                                                                                role="list"
-                                                                                                aria-labelledby="desktop-categories-heading"
-                                                                                                className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                                                            >
-                                                                                                {category.categories.map((item) => (
                                                                                                     <li key={item.name} className="flex">
                                                                                                         <a href={item.href} className="hover:text-gray-800">
                                                                                                             {item.name}
@@ -326,25 +253,6 @@ export const Navigation: NextComponentType =() => {
                                                                                                 ))}
                                                                                             </ul>
                                                                                         </div>
-
-                                                                                        <div>
-                                                                                            <p id="desktop-brand-heading" className="font-medium text-gray-900">
-                                                                                                Brands
-                                                                                            </p>
-                                                                                            <ul
-                                                                                                role="list"
-                                                                                                aria-labelledby="desktop-brand-heading"
-                                                                                                className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                                                            >
-                                                                                                {category.brands.map((item) => (
-                                                                                                    <li key={item.name} className="flex">
-                                                                                                        <a href={item.href} className="hover:text-gray-800">
-                                                                                                            {item.name}
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                ))}
-                                                                                            </ul>
-                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -360,7 +268,7 @@ export const Navigation: NextComponentType =() => {
                                                     <a
                                                         key={page.name}
                                                         href={page.href}
-                                                        className="flex items-center text-sm font-medium hover:text-gray-800"
+                                                        className="flex items-center text-sm font-medium text-white hover:text-gray-800"
                                                     >
                                                         {page.name}
                                                     </a>
@@ -383,7 +291,7 @@ export const Navigation: NextComponentType =() => {
                                         {/* Search */}
                                         <div className={'px-5'}>
                                             <Link href={'search'} >
-                                                <SearchIcon className="w-6 h-6 hover:text-safety-red" aria-hidden="true" />
+                                                <SearchIcon className="w-6 h-6 text-white" aria-hidden="true" />
                                             </Link>
                                         </div>
 
@@ -394,13 +302,13 @@ export const Navigation: NextComponentType =() => {
                                                 <div className="hidden lg:flex">
                                                     <span className="sr-only">Search</span>
                                                     <Link href={'search'} >
-                                                        <SearchIcon className="w-6 h-6 hover:text-safety-red hover:cursor" aria-hidden="true" />
+                                                        <SearchIcon className="w-6 h-6 text-white hover:cursor" aria-hidden="true" />
                                                     </Link>
                                                 </div>
 
                                                 <div className="flex">
                                                     <Link href={{pathname:"/account/login"}}>
-                                                        <a href="#" className="-m-2 p-2 hover:text-slate-400">
+                                                        <a href="#" className="-m-2 p-2 text-white">
                                                         <span className="sr-only">Account</span>
                                                         <UserIcon className="w-6 h-6" aria-hidden="true" />
                                                     </a>
@@ -411,13 +319,13 @@ export const Navigation: NextComponentType =() => {
                                             <span className="mx-4 h-6 w-px bg-white lg:mx-6" aria-hidden="true" />
 
                                             <div className="flow-root">
-                                                <Link href={"/cart"}>
+                                                <Link href={"/checkout/cart"}>
                                                     <a href="#" className="group -m-2 p-2 flex items-center">
                                                         <ShoppingCartIcon
-                                                            className="flex-shrink-0 h-6 w-6 group-hover:text-slate-400"
+                                                            className="flex-shrink-0 h-6 w-6 text-white"
                                                             aria-hidden="true"
                                                         />
-                                                        <span className="ml-2 text-sm font-medium group-hover:text-gray-800">0</span>
+                                                        <span className="ml-2 text-sm font-medium text-white">0</span>
                                                         <span className="sr-only">items in cart, view bag</span>
                                                     </a>
                                                 </Link>

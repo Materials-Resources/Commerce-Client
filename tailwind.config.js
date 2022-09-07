@@ -9,7 +9,9 @@ module.exports = {
       colors:{
         'safety-red':'#e92127',
         'calm-blue': '#293862',
-        'notebook': '#BEBBBB'
+        'raisin-black': '#1F2233',
+        'laurel': '#BAD2B2',
+        'mountbatten': '#94849B'
       }
     },
   },

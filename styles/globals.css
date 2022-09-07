@@ -20,10 +20,16 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    color-scheme: light
   }
   body {
     color: white;
-    background: slategray;
+    background: #1F2233;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    color: white;
+    background: #293862;
   }
 }
