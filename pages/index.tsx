@@ -80,8 +80,8 @@ const Home: NextPage = () => {
       <div className="bg-white">
         <main>
           {/* Hero */}
-          <div className="flex flex-col border-b border-gray-200 lg:border-0">
-            <nav aria-label="Offers" className="order-last lg:order-first">
+          <div className="flex flex-col border-b border-safety-red lg:border-0">
+            <nav aria-label="Offers" className=" border-b-4 border-safety-red order-last lg:order-first">
               <div className="max-w-7xl mx-auto lg:px-8">
                 <ul
                     role="list"
@@ -103,16 +103,16 @@ const Home: NextPage = () => {
             </nav>
 
             <div className="relative ">
-              <div aria-hidden="true" className="hidden absolute w-1/2 h-full bg-calm-blue lg:block" />
-              <div className="relative bg-calm-blue lg:bg-transparent">
+              <div aria-hidden="true" className="hidden absolute w-1/2 h-full lg:block" />
+              <div className="relative bg-slate-600 lg:bg-transparent">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-2">
                   <div className="max-w-2xl mx-auto py-24 lg:py-64 lg:max-w-none">
-                    <div className="lg:pr-16">
-                      <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:tracking-tight sm:text-5xl xl:tracking-tight xl:text-6xl">
+                    <div className="lg:pr-16 lg:text-calm-blue">
+                      <h1 className="text-4xl font-bold tracking-tight sm:tracking-tight sm:text-5xl xl:tracking-tight xl:text-6xl">
                         What you need!<br/>
                         When you need it!
                       </h1>
-                      <p className="mt-4 text-xl text-gray-200">
+                      <p className="mt-4 text-xl">
                         Looking for materials? Our vast catalog contains just about anything you will every need!
                       </p>
                       <div className="mt-6">

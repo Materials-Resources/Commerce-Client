@@ -72,7 +72,7 @@ const resultGrid = ({children}: {children: any}) => (
 
 const search: NextPage =() => {
     return(
-        <div className={'bg-calm-blue text-black'}>
+        <div className={'bg-slate-200 text-black'}>
             <SearchProvider config={config}>
                 <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                     {({ wasSearched }) => {
@@ -91,9 +91,8 @@ const search: NextPage =() => {
                                             }) => (
                                                 <div className="relative">
                                                     <input {...getInputProps({placeholder: "What can we help you find?"})} type="search" id="default-search"
-                                                                   className="p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                                   className="p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                                                                    />
-                                                            {getAutocomplete}
                                                             {/*<button {...getButtonProps}*/}
                                                             {/*            className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800*/}
                                                             {/*             focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2*/}
@@ -122,7 +121,7 @@ const search: NextPage =() => {
                                                 titleField={getConfig().titleField}
                                                 urlField={getConfig().urlField}
                                                 resultView={searchResultView}
-                                                view={resultGrid}
+                                                // view={resultGrid}
                                                 thumbnailField={getConfig().thumbnailField}
                                                 shouldTrackClickThrough={true}
                                             />

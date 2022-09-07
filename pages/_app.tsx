@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Head>
               <title>Materials Resources</title>
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-              <meta name="color-scheme" content="only light" />
           </Head>
           <Layout>
               <Component {...pageProps} />

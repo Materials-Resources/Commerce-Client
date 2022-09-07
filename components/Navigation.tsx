@@ -213,41 +213,21 @@ export const Navigation: NextComponentType =() => {
 
             <header className="relative z-10">
                 <nav aria-label="Top">
-                    {/* Top navigation */}
-                    <div className="bg-safety-red">
-                        <div className="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
-                            <p className="flex-1 text-center text-sm font-medium text-white lg:flex-none">
-                                Get free delivery on orders over $100
-                            </p>
-
-                            <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                                <a href="#" className="text-sm font-medium text-white hover:text-gray-100">
-                                    Create an account
-                                </a>
-                                <span className="h-6 w-px bg-gray-600" aria-hidden="true" />
-                                <a href="#" className="text-sm font-medium text-white hover:text-gray-100">
-                                    Sign in
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                     {/* Secondary navigation */}
-                    <div className="bg-notebook">
+                    <div className="bg-calm-blue text-white">
                         <div className="border-b border-gray-200">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="h-16 flex items-center justify-between">
+                                <div className="h-28 flex items-center justify-between">
                                     {/* Logo (lg+) */}
-                                    <div className="relative ">
-                                        <Link href="/" >
+                                        <div className={'block h-20 w-100'}>
                                             <Image
-                                                layout={'fill'}
-                                                objectFit={'contain'}
-                                                src={logo}
+                                                layout="responsive"
+                                                width={530}
+                                                height={147}
+                                                src={'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/339e2842-2912-4420-fca9-f8ff1d3aac00/p'}
                                                 alt=""
                                             />
-                                        </Link>
-                                    </div>
+                                        </div>
 
                                     <div className="hidden h-full lg:flex">
                                         {/* Mega menus */}
@@ -261,8 +241,8 @@ export const Navigation: NextComponentType =() => {
                                                                     <Popover.Button
                                                                         className={classNames(
                                                                             open
-                                                                                ? 'border-indigo-600 text-indigo-600'
-                                                                                : 'border-transparent text-gray-700 hover:text-gray-800',
+                                                                                ? 'border-indigo-600 text-white'
+                                                                                : 'border-transparent hover:text-gray-800',
                                                                             'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px'
                                                                         )}
                                                                     >
@@ -279,7 +259,7 @@ export const Navigation: NextComponentType =() => {
                                                                     leaveFrom="opacity-100"
                                                                     leaveTo="opacity-0"
                                                                 >
-                                                                    <Popover.Panel className="absolute top-full inset-x-0 text-gray-500 sm:text-sm">
+                                                                    <Popover.Panel className="absolute top-full inset-x-0 sm:text-sm">
                                                                         {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                                                         <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
 
@@ -380,7 +360,7 @@ export const Navigation: NextComponentType =() => {
                                                     <a
                                                         key={page.name}
                                                         href={page.href}
-                                                        className="flex items-center text-sm font-medium text-calm-blue hover:text-gray-800"
+                                                        className="flex items-center text-sm font-medium hover:text-gray-800"
                                                     >
                                                         {page.name}
                                                     </a>
@@ -390,10 +370,10 @@ export const Navigation: NextComponentType =() => {
                                     </div>
 
                                     {/* Mobile menu and search (lg-) */}
-                                    <div className="flex-1 flex items-center bg-notebook lg:hidden">
+                                    <div className="flex-1 flex items-center lg:hidden">
                                         <button
                                             type="button"
-                                            className="-ml-2 bg-white p-2 rounded-md text-calm-blue"
+                                            className="-ml-2 p-2 rounded-md"
                                             onClick={() => setMobileMenuOpen(true)}
                                         >
                                             <span className="sr-only">Open menu</span>
@@ -403,40 +383,24 @@ export const Navigation: NextComponentType =() => {
                                         {/* Search */}
                                         <div className={'px-5'}>
                                             <Link href={'search'} >
-                                                <SearchIcon className="w-6 h-6 text-calm-blue hover:text-safety-red" aria-hidden="true" />
+                                                <SearchIcon className="w-6 h-6 hover:text-safety-red" aria-hidden="true" />
                                             </Link>
                                         </div>
 
                                     </div>
-
-                                    {/* Logo (lg-) */}
-                                    <a href="#" className="lg:hidden">
-                                        <span className="sr-only">Workflow</span>
-                                        <div className={'relative'}>
-                                            <Image
-                                                width={60}
-                                                height={50}
-                                                src={icon}
-                                                alt=""
-                                                className="h-8 w-auto"
-                                            />
-                                        </div>
-
-                                    </a>
-
                                     <div className="flex-1 flex items-center justify-end">
                                         <div className="flex items-center lg:ml-8">
                                             <div className="flex space-x-8">
                                                 <div className="hidden lg:flex">
                                                     <span className="sr-only">Search</span>
                                                     <Link href={'search'} >
-                                                        <SearchIcon className="w-6 h-6 text-calm-blue hover:text-safety-red hover:cursor" aria-hidden="true" />
+                                                        <SearchIcon className="w-6 h-6 hover:text-safety-red hover:cursor" aria-hidden="true" />
                                                     </Link>
                                                 </div>
 
                                                 <div className="flex">
                                                     <Link href={{pathname:"/account/login"}}>
-                                                        <a href="#" className="-m-2 p-2 text-calm-blue hover:text-safety-red">
+                                                        <a href="#" className="-m-2 p-2 hover:text-slate-400">
                                                         <span className="sr-only">Account</span>
                                                         <UserIcon className="w-6 h-6" aria-hidden="true" />
                                                     </a>
@@ -444,16 +408,16 @@ export const Navigation: NextComponentType =() => {
                                                 </div>
                                             </div>
 
-                                            <span className="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" />
+                                            <span className="mx-4 h-6 w-px bg-white lg:mx-6" aria-hidden="true" />
 
                                             <div className="flow-root">
                                                 <Link href={"/cart"}>
                                                     <a href="#" className="group -m-2 p-2 flex items-center">
                                                         <ShoppingCartIcon
-                                                            className="flex-shrink-0 h-6 w-6 text-calm-blue group-hover:text-safety-red"
+                                                            className="flex-shrink-0 h-6 w-6 group-hover:text-slate-400"
                                                             aria-hidden="true"
                                                         />
-                                                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                                                        <span className="ml-2 text-sm font-medium group-hover:text-gray-800">0</span>
                                                         <span className="sr-only">items in cart, view bag</span>
                                                     </a>
                                                 </Link>

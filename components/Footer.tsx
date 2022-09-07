@@ -50,20 +50,20 @@ export const Footer: NextComponentType =() => {
                          <div className="pt-16 pb-20">
                              <div className="md:flex md:justify-center">
                                  <img
-                                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                                     src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/04dae379-5cb1-4571-a9aa-3988ab065f00/p"
                                      alt=""
-                                     className="h-8 w-auto"
+                                     width={100}
                                  />
                              </div>
                              <div className="mt-16 max-w-5xl mx-auto xl:grid xl:grid-cols-2 xl:gap-8">
                                  <div className="grid grid-cols-2 gap-8 xl:col-span-2">
                                      <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
                                          <div>
-                                             <h3 className="text-sm font-medium text-gray-900">Products</h3>
+                                             <h3 className="text-sm font-medium text-white">Products</h3>
                                              <ul role="list" className="mt-6 space-y-6">
                                                  {footerNavigation.products.map((item) => (
                                                      <li key={item.name} className="text-sm">
-                                                         <a href={item.href} className="text-gray-500 hover:text-gray-600">
+                                                         <a href={item.href} className="text-gray-200 hover:text-gray-400">
                                                              {item.name}
                                                          </a>
                                                      </li>
@@ -71,11 +71,11 @@ export const Footer: NextComponentType =() => {
                                              </ul>
                                          </div>
                                          <div>
-                                             <h3 className="text-sm font-medium text-gray-900">Customer Service</h3>
+                                             <h3 className="text-sm font-medium text-white">Customer Service</h3>
                                              <ul role="list" className="mt-6 space-y-6">
                                                  {footerNavigation.customerService.map((item) => (
                                                      <li key={item.name} className="text-sm">
-                                                         <a href={item.href} className="text-gray-500 hover:text-gray-600">
+                                                         <a href={item.href} className="text-gray-200 hover:text-gray-400">
                                                              {item.name}
                                                          </a>
                                                      </li>
@@ -85,11 +85,11 @@ export const Footer: NextComponentType =() => {
                                      </div>
                                      <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
                                          <div>
-                                             <h3 className="text-sm font-medium text-gray-900">Company</h3>
+                                             <h3 className="text-sm font-medium text-white">Company</h3>
                                              <ul role="list" className="mt-6 space-y-6">
                                                  {footerNavigation.company.map((item) => (
                                                      <li key={item.name} className="text-sm">
-                                                         <a href={item.href} className="text-gray-500 hover:text-gray-600">
+                                                         <a href={item.href} className="text-gray-200 hover:text-gray-400">
                                                              {item.name}
                                                          </a>
                                                      </li>
@@ -97,11 +97,11 @@ export const Footer: NextComponentType =() => {
                                              </ul>
                                          </div>
                                          <div>
-                                             <h3 className="text-sm font-medium text-gray-900">Legal</h3>
+                                             <h3 className="text-sm font-medium text-white">Legal</h3>
                                              <ul role="list" className="mt-6 space-y-6">
                                                  {footerNavigation.legal.map((item) => (
                                                      <li key={item.name} className="text-sm">
-                                                         <a href={item.href} className="text-gray-500 hover:text-gray-600">
+                                                         <a href={item.href} className="text-gray-200 hover:text-gray-400">
                                                              {item.name}
                                                          </a>
                                                      </li>
@@ -114,7 +114,7 @@ export const Footer: NextComponentType =() => {
                          </div>
 
                          <div className="flex justify-center">
-                             <div className="bg-notebook  w-1/2 rounded-lg p-6 flex items-center sm:p-10">
+                             <div className="bg-white  w-1/2 rounded-lg p-6 flex items-center sm:p-10">
                                  <div className="max-w-sm mx-auto">
                                      <h3 className="font-semibold text-calm-blue">Sign up for our newsletter</h3>
                                      <p className="mt-2 text-sm text-calm-blue">
