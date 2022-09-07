@@ -7,3 +7,4 @@ const PasswordReset: NextPage =() => {
         </>
     )
 }
+export default PasswordReset;
