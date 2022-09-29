@@ -1,7 +1,7 @@
 import { NextComponentType } from 'next';
 import React, { Fragment, SetStateAction, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react';
-import { KeyIcon } from '@heroicons/react/outline';
+import { KeyIcon } from '@heroicons/react/24/outline';
 
 export const AccountReset: NextComponentType =() => {
     const [open, setOpen] = useState(false);
