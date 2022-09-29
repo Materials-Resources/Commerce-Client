@@ -1,12 +1,9 @@
 import {NextComponentType} from "next";
+import Image from 'next/image';
 
 const footerNavigation = {
     products: [
-        { name: 'Bags', href: '#' },
-        { name: 'Tees', href: '#' },
-        { name: 'Objects', href: '#' },
-        { name: 'Home Goods', href: '#' },
-        { name: 'Accessories', href: '#' },
+        { name: 'New Items', href: '#' },
     ],
     customerService: [
         { name: 'Contact', href: '#' },
@@ -15,12 +12,10 @@ const footerNavigation = {
         { name: 'Warranty', href: '#' },
         { name: 'Secure Payments', href: '#' },
         { name: 'FAQ', href: '#' },
-        { name: 'Find a store', href: '#' },
     ],
     company: [
         { name: 'Who we are', href: '#' },
         { name: 'Sustainability', href: '#' },
-        { name: 'Press', href: '#' },
         { name: 'Careers', href: '#' },
         { name: 'Terms & Conditions', href: '#' },
         { name: 'Privacy', href: '#' },
@@ -48,13 +43,14 @@ export const Footer: NextComponentType =() => {
                  <div className="bg-calm-blue mx-auto px-4 sm:px-6 lg:px-8 dark:bg-raisin-black">
                      <div className="border-t border-gray-200">
                          <div className="pt-16 pb-20">
-                             <div className="md:flex md:justify-center">
-                                 <img
-                                     src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/10b62db2-d563-45b4-0d6e-70492acab200/p"
-                                     alt=""
-                                     width={100}
-                                 />
-                             </div>
+                                 <div className="relative h-20 w-20 m-auto">
+                                     <Image
+                                         src='https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/10b62db2-d563-45b4-0d6e-70492acab200/p'
+                                         alt="Logo"
+                                         layout="fill" // required
+                                         objectFit="cover" // change as you like
+                                     />
+                                 </div>
                              <div className="mt-16 max-w-5xl mx-auto xl:grid xl:grid-cols-2 xl:gap-8">
                                  <div className="grid grid-cols-2 gap-8 xl:col-span-2">
                                      <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">

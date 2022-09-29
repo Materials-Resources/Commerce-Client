@@ -1,4 +1,4 @@
-import {Navigation} from "./Navigation";
+import { Navigation } from "./Navigation";
 import {Component} from "react";
 import {Footer} from "./Footer";
 

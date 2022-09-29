@@ -1,344 +1,213 @@
-import {NextComponentType} from "next";
-import {Dialog, Popover, Tab, Transition} from "@headlessui/react";
-import React, {Fragment, useState} from "react";
-import {MenuIcon, SearchIcon, ShoppingCartIcon, UserIcon, XIcon} from "@heroicons/react/outline";
-import Image from "next/image";
-import logo from "../public/static/images/logo.webp";
-import icon from "../public/static/images/icon.webp";
-import Link from "next/link";
+import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import Image from 'next/image';
+import { Bars3Icon, XMarkIcon, BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { NextComponentType } from 'next';
+import { SearchBox } from './SearchBox';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { ChevronDownIcon, ShoppingBagIcon } from '@heroicons/react/20/solid';
 
-const navigation = {
-    categories: [
-        {
-            name: 'Products',
-            featured: [
-                { name: 'Safety', href: '#' },
-                { name: 'Abrasives', href: '#' },
-                { name: 'Armour Guys', href: '#' },
-            ],
-            collection: [
-                { name: 'Everything', href: '#' },
-                { name: 'Core', href: '#' },
-                { name: 'New Arrivals', href: '#' },
-                { name: 'Sale', href: '#' },
-            ],
-        }
-    ],
-    pages: [
-        { name: 'About Our Company', href: '#' },
-        { name: 'Careers', href: '#'}
-    ],
+const user = {
+    name: 'Tom Cook',
+    email: 'tom@example.com',
+    imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
+const navigation = [
+    { name: 'Home', route: '/'},
+    { name: 'Catalog', route: '/Catalog'},
+    { name: 'Custom', route: '/Custom'},
+    { name: 'About', route: '/About'},
+]
+const userNavigation = [
+    { name: 'Your Orders', href: '/account/Orders' },
+    { name: 'Settings', href: '#' },
+    { name: 'Sign out', href: '#' },
+]
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export const Navigation: NextComponentType =() => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+export const Navigation: NextComponentType = () => {
+    const router = useRouter();
 
-    return(
-        <>
-            {/* Mobile menu */}
-            <Transition.Root show={mobileMenuOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-40 lg:hidden" onClose={setMobileMenuOpen}>
-                    <Transition.Child
-                        as={Fragment}
-                        enter="transition-opacity ease-linear duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition-opacity ease-linear duration-300"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                    >
-                        <div className="fixed inset-0 bg-black bg-opacity-25" />
-                    </Transition.Child>
-
-                    <div className="fixed inset-0 flex z-40">
-                        <Transition.Child
-                            as={Fragment}
-                            enter="transition ease-in-out duration-300 transform"
-                            enterFrom="-translate-x-full"
-                            enterTo="translate-x-0"
-                            leave="transition ease-in-out duration-300 transform"
-                            leaveFrom="translate-x-0"
-                            leaveTo="-translate-x-full"
-                        >
-                            <Dialog.Panel className="relative max-w-xs w-full bg-calm-blue shadow-xl pb-12 flex flex-col overflow-y-auto text-white dark:bg-raisin-black">
-                                <div className="px-4 pt-5 pb-2 flex">
-                                    <button
-                                        type="button"
-                                        className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <span className="sr-only">Close menu</span>
-                                        <XIcon className="h-6 w-6" aria-hidden="true" />
-                                    </button>
+    return (
+        <Disclosure as="header" className="bg-raisin-black">
+            {({ open }) => (
+                <>
+                    <div className="mx-auto max-w-8xl px-2 sm:px-4 lg:divide-y lg:divide-gray-700 lg:px-8">
+                        <div className="relative flex flex-row items-center h-28 justify-between">
+                            <div className={'mr-0 flex flex-row justify-end items-end'}>
+                                <div className={'p-5'}>
+                                    <SearchBox />
                                 </div>
-
-                                {/* Links */}
-                                <Tab.Group as="div" className="mt-2">
-                                    <div className="">
-                                        <Tab.List className="-mb-px flex px-4 space-x-8">
-                                            {navigation.categories.map((category) => (
-                                                <Tab
-                                                    key={category.name}
-                                                    className={({ selected }) =>
-                                                        classNames(
-                                                            selected ? 'border-safety-red' : 'text-gray-900 border-transparent',
-                                                            'flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium'
-                                                        )
-                                                    }
-                                                >
-                                                    {category.name}
-                                                </Tab>
-                                            ))}
-                                        </Tab.List>
-                                    </div>
-                                    <Tab.Panels as={Fragment}>
-                                        {navigation.categories.map((category, categoryIdx) => (
-                                            <Tab.Panel key={category.name} className="px-4 pt-10 pb-6 space-y-12">
-                                                <div className="grid grid-cols-1 items-start gap-y-10 gap-x-6">
-                                                    <div className="grid grid-cols-1 gap-y-10 gap-x-6">
-                                                        <div>
-                                                            <p id={`mobile-featured-heading-${categoryIdx}`} className="font-medium">
-                                                                Featured
-                                                            </p>
-                                                            <ul
-                                                                role="list"
-                                                                aria-labelledby={`mobile-featured-heading-${categoryIdx}`}
-                                                                className="mt-6 space-y-6"
-                                                            >
-                                                                {category.featured.map((item) => (
-                                                                    <li key={item.name} className="flex">
-                                                                        <a href={item.href} className="">
-                                                                            {item.name}
-                                                                        </a>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div className="grid grid-cols-1 gap-y-10 gap-x-6">
-                                                        <div>
-                                                            <p id="mobile-collection-heading" className="font-medium text-gray-900">
-                                                                Collection
-                                                            </p>
-                                                            <ul role="list" aria-labelledby="mobile-collection-heading" className="mt-6 space-y-6">
-                                                                {category.collection.map((item) => (
-                                                                    <li key={item.name} className="flex">
-                                                                        <a href={item.href} className="text-gray-500">
-                                                                            {item.name}
-                                                                        </a>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Tab.Panel>
-                                        ))}
-                                    </Tab.Panels>
-                                </Tab.Group>
-
-                                <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                    {navigation.pages.map((page) => (
-                                        <div key={page.name} className="flow-root">
-                                            <a href={page.href} className="-m-2 p-2 block font-medium text-gray-900">
-                                                {page.name}
-                                            </a>
-                                        </div>
-                                    ))}
-                                </div>
-                            </Dialog.Panel>
-                        </Transition.Child>
-                    </div>
-                </Dialog>
-            </Transition.Root>
-
-            <header className="relative z-10">
-                <nav aria-label="Top">
-                    {/* Secondary navigation */}
-                    <div className="bg-calm-blue">
-                        <div className="border-b border-gray-200">
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="h-28 flex items-center justify-between">
-                                    {/* Logo (lg+) */}
-                                        <div className={'block h-20 w-100'}>
-                                            <Image
-                                                layout="responsive"
-                                                width={530}
-                                                height={147}
-                                                src={'https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/339e2842-2912-4420-fca9-f8ff1d3aac00/p'}
-                                                alt=""
-                                            />
-                                        </div>
-
-                                    <div className="hidden h-full lg:flex">
-                                        {/* Mega menus */}
-                                        <Popover.Group className="ml-8">
-                                            <div className="h-full flex justify-center space-x-8">
-                                                {navigation.categories.map((category, categoryIdx) => (
-                                                    <Popover key={category.name} className="flex">
-                                                        {({ open }) => (
-                                                            <>
-                                                                <div className="relative flex">
-                                                                    <Popover.Button
-                                                                        className={classNames(
-                                                                            open
-                                                                                ? 'border-indigo-600'
-                                                                                : 'border-transparent hover:text-gray-800',
-                                                                            'relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px text-white'
-                                                                        )}
-                                                                    >
-                                                                        {category.name}
-                                                                    </Popover.Button>
-                                                                </div>
-
-                                                                <Transition
-                                                                    as={Fragment}
-                                                                    enter="transition ease-out duration-200"
-                                                                    enterFrom="opacity-0"
-                                                                    enterTo="opacity-100"
-                                                                    leave="transition ease-in duration-150"
-                                                                    leaveFrom="opacity-100"
-                                                                    leaveTo="opacity-0"
-                                                                >
-                                                                    <Popover.Panel className="absolute top-full inset-x-0 sm:text-sm">
-                                                                        {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                                                        <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
-
-                                                                        <div className="relative bg-white">
-                                                                            <div className="max-w-7xl mx-auto px-8">
-                                                                                <div className="grid grid-cols-2 items-start gap-y-10 gap-x-8 pt-10 pb-12">
-                                                                                    <div className="grid grid-cols-2 gap-y-10 gap-x-8">
-                                                                                        <div>
-                                                                                            <p
-                                                                                                id={`desktop-featured-heading-${categoryIdx}`}
-                                                                                                className="font-medium"
-                                                                                            >
-                                                                                                Featured
-                                                                                            </p>
-                                                                                            <ul
-                                                                                                role="list"
-                                                                                                aria-labelledby={`desktop-featured-heading-${categoryIdx}`}
-                                                                                                className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                                                            >
-                                                                                                {category.featured.map((item) => (
-                                                                                                    <li key={item.name} className="flex">
-                                                                                                        <a href={item.href} className="hover:text-gray-800">
-                                                                                                            {item.name}
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                ))}
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className="grid grid-cols-2 gap-y-10 gap-x-8">
-                                                                                        <div>
-                                                                                            <p id="desktop-collection-heading" className="font-medium text-gray-900">
-                                                                                                Collection
-                                                                                            </p>
-                                                                                            <ul
-                                                                                                role="list"
-                                                                                                aria-labelledby="desktop-collection-heading"
-                                                                                                className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                                                            >
-                                                                                                {category.collection.map((item) => (
-                                                                                                    <li key={item.name} className="flex">
-                                                                                                        <a href={item.href} className="hover:text-gray-800">
-                                                                                                            {item.name}
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                ))}
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </Popover.Panel>
-                                                                </Transition>
-                                                            </>
-                                                        )}
-                                                    </Popover>
-                                                ))}
-
-                                                {navigation.pages.map((page) => (
-                                                    <a
-                                                        key={page.name}
-                                                        href={page.href}
-                                                        className="flex items-center text-sm font-medium text-white hover:text-gray-800"
-                                                    >
-                                                        {page.name}
-                                                    </a>
-                                                ))}
-                                            </div>
-                                        </Popover.Group>
-                                    </div>
-
-                                    {/* Mobile menu and search (lg-) */}
-                                    <div className="flex-1 flex items-center lg:hidden">
-                                        <button
-                                            type="button"
-                                            className="-ml-2 p-2 rounded-md"
-                                            onClick={() => setMobileMenuOpen(true)}
-                                        >
-                                            <span className="sr-only">Open menu</span>
-                                            <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                                        </button>
-
-                                        {/* Search */}
-                                        <div className={'px-5'}>
-                                            <Link href={'search'} >
-                                                <SearchIcon className="w-6 h-6 text-white" aria-hidden="true" />
-                                            </Link>
-                                        </div>
-
-                                    </div>
-                                    <div className="flex-1 flex items-center justify-end">
-                                        <div className="flex items-center lg:ml-8">
-                                            <div className="flex space-x-8">
-                                                <div className="hidden lg:flex">
-                                                    <span className="sr-only">Search</span>
-                                                    <Link href={'search'} >
-                                                        <SearchIcon className="w-6 h-6 text-white hover:cursor" aria-hidden="true" />
-                                                    </Link>
-                                                </div>
-
-                                                <div className="flex">
-                                                    <Link href={{pathname:"/account/login"}}>
-                                                        <a href="#" className="-m-2 p-2 text-white">
-                                                        <span className="sr-only">Account</span>
-                                                        <UserIcon className="w-6 h-6" aria-hidden="true" />
-                                                    </a>
-                                                    </Link>
-                                                </div>
-                                            </div>
-
-                                            <span className="mx-4 h-6 w-px bg-white lg:mx-6" aria-hidden="true" />
-
-                                            <div className="flow-root">
-                                                <Link href={"/checkout/cart"}>
-                                                    <a href="#" className="group -m-2 p-2 flex items-center">
-                                                        <ShoppingCartIcon
-                                                            className="flex-shrink-0 h-6 w-6 text-white"
-                                                            aria-hidden="true"
-                                                        />
-                                                        <span className="ml-2 text-sm font-medium text-white">0</span>
-                                                        <span className="sr-only">items in cart, view bag</span>
-                                                    </a>
-                                                </Link>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className={'p-5'}>
+                                    <Link href={'/checkout/cart'}>
+                                        <ShoppingBagIcon className={'w-7 h-7'} />
+                                    </Link>
                                 </div>
                             </div>
+                            <div className="relative z-10 flex">
+                                <div className={'hidden lg:flex'}>
+                                    <img
+                                        src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/557c1845-e99f-4f39-e7af-6f3f72118c00/p"
+                                        alt="Picture of the something nice"
+                                        className={'h-20'}
+                                    />
+                                </div>
+                                <div className={'flex lg:hidden justify-center'}>
+                                    <img
+                                        src="https://imagedelivery.net/ABOKdsGnCenw7al-aeuiGQ/10b62db2-d563-45b4-0d6e-70492acab200/p"
+                                        alt="Picture of the something nice"
+                                        className={'h-10'}
+                                    />
+                                </div>
+                            </div>
+                            <div className="relative z-10 flex items-center lg:hidden">
+                                {/* Mobile menu button */}
+
+                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <span className="sr-only">Open menu</span>
+                                    {open ? (
+                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                    ) : (
+                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                    )}
+                                </Disclosure.Button>
+                            </div>
+                            {/*<div className={'mr-1'}>*/}
+                            {/*    <SearchBox />*/}
+                            {/*</div>*/}
+
+                            <div className="hidden lg:relative lg:z-10 lg:ml-4 lg:flex lg:items-center">
+                                {/* Profile dropdown */}
+                                <Menu as="div" className="relative ml-4 flex-shrink-0">
+                                    <div className={'flex flex-row items-center'}>
+
+
+                                        <Menu.Button className="flex rounded-lg p-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                            <span className="sr-only">Open user menu</span>
+                                            <div className={'flex flex-row justify-center'}>
+                                                <p className={'font-bold'}>Hi, Collin</p>
+                                                <ChevronDownIcon className={'w-5 h-5'}/>
+                                            </div>
+
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="absolute right-0 z-10 my-4 py-5 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            {userNavigation.map((item) => (
+                                                <Menu.Item key={item.name}>
+                                                    {({ active }) => (
+                                                        <Link
+                                                            href={item.href}
+
+                                                        >
+                                                            <a
+                                                                className={classNames(
+                                                                    router.pathname == item.href ? 'bg-gray-100' : '',
+                                                                    'block py-2 px-4 text-sm text-gray-700'
+                                                                )}>
+                                                                {item.name}
+                                                            </a>
+
+                                                        </Link>
+                                                    )}
+                                                </Menu.Item>
+                                            ))}
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+                            </div>
                         </div>
+                        <nav className="hidden lg:flex lg:space-x-8 lg:py-2" aria-label="Global">
+                            {navigation.map((item) => (
+                                <Link
+                                    href={item.route}
+                                    key={item.route}
+                                >
+                                    <a className={classNames(
+                                        router.pathname == item.route ? 'bg-calm-blue': 'bg-none',
+                                        'py-2 px-3 rounded-md'
+                                    )}>
+                                        {item.name}
+                                    </a>
+                                </Link>
+
+
+                            ))}
+                        </nav>
                     </div>
-                </nav>
-            </header>
-        </>
+
+                    <Disclosure.Panel as="nav" className="lg:hidden" aria-label="Global">
+                        <div className="space-y-1 px-2 pt-2 pb-3">
+                            {navigation.map((item) => (
+                                <Link key={item.route} href={item.route}>
+                                    <a className={classNames(
+                                        router.pathname == item.route ? 'bg-calm-blue': 'bg-none',
+                                        'block rounded-md py-2 px-3 text-base font-medium'
+                                    )}>
+                                        {item.name}
+                                    </a>
+                                </Link>
+
+                                    // <Disclosure.Button
+                                    //     as="link"
+                                    //     key={item.route}
+                                    //     href={item.route}
+                                    //     className={classNames(
+                                    //         router.pathname == item.route ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    //         'block rounded-md py-2 px-3 text-base font-medium'
+                                    //     )}
+                                    //     // aria-current={router.pathname == item.route ? 'page' : undefined}
+                                    // >
+                                    //     {item.name}
+                                    // </Disclosure.Button>
+                            ))}
+                        </div>
+                        <div className="border-t border-gray-700 pt-4 pb-3">
+                            <div className="flex items-center px-4">
+                                <div className="flex-shrink-0">
+                                    <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
+                                </div>
+                                <div className="ml-3">
+                                    <div className="text-base font-medium text-white">{user.name}</div>
+                                    <div className="text-sm font-medium text-gray-400">{user.email}</div>
+                                </div>
+                                <button
+                                    type="button"
+                                    className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                >
+                                    <span className="sr-only">View notifications</span>
+                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                </button>
+                            </div>
+                            <div className="mt-3 space-y-1 px-2">
+                                {userNavigation.map((item) => (
+                                    <Disclosure.Button
+                                        key={item.name}
+                                        as="a"
+                                        href={item.href}
+                                        className="block rounded-md py-2 px-3 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                                    >
+                                        {item.name}
+                                    </Disclosure.Button>
+                                ))}
+                            </div>
+                        </div>
+                    </Disclosure.Panel>
+                </>
+            )}
+        </Disclosure>
     )
 }

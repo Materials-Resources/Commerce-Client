@@ -1,7 +1,4 @@
 import type { NextPage } from 'next'
-import { Fragment, useState } from 'react'
-import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
-import { MenuIcon, SearchIcon, ShoppingCartIcon, UserIcon, XIcon } from '@heroicons/react/outline'
 
 
 const offers = [
@@ -77,7 +74,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="bg-white">
+      <div className="bg-white w-3/4 mx-auto">
         <main>
           {/* Hero */}
           <div className="flex flex-col border-b border-safety-red lg:border-0">
@@ -102,11 +99,11 @@ const Home: NextPage = () => {
               </div>
             </nav>
 
-            <div className="relative ">
+            <div className="relative bg-mountbatten ">
               <div aria-hidden="true" className="hidden absolute w-1/2 h-full lg:block" />
               <div className="relative bg-slate-600 lg:bg-transparent">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:grid lg:grid-cols-2">
-                  <div className="max-w-2xl mx-auto py-24 lg:py-64 lg:max-w-none">
+                  <div className="max-w-2xl mx-auto py-24 lg:py-64 lg:max-w-none ">
                     <div className="lg:pr-16 lg:text-calm-blue">
                       <h1 className="text-4xl font-bold tracking-tight sm:tracking-tight sm:text-5xl xl:tracking-tight xl:text-6xl">
                         What you need!<br/>
@@ -249,31 +246,6 @@ const Home: NextPage = () => {
               <div className="absolute inset-0 bg-white bg-opacity-75" />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white" />
             </div>
-
-            {/* Sale */}
-            <section
-                aria-labelledby="sale-heading"
-                className="relative max-w-7xl mx-auto pt-32 px-4 flex flex-col items-center text-center sm:px-6 lg:px-8"
-            >
-              <div className="max-w-2xl mx-auto lg:max-w-none">
-                <h2
-                    id="sale-heading"
-                    className="text-4xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-5xl lg:tracking-tight lg:text-6xl"
-                >
-                  Get 25% off during our one-time salea
-                </h2>
-                <p className="mt-4 max-w-xl mx-auto text-xl text-gray-600">
-                  Most of our products are limited releases that won&apost come back. Get your favorite items while they%aposre in
-                  stock.
-                </p>
-                <a
-                    href="#"
-                    className="mt-6 inline-block w-full bg-gray-900 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-gray-800 sm:w-auto"
-                >
-                  Get access to our one-time sale
-                </a>
-              </div>
-            </section>
 
             {/* Testimonials */}
             <section
