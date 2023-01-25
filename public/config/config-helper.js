@@ -102,8 +102,8 @@ export function buildSearchOptionsFromConfig() {
         raw: {},
         snippet: {
           size: 100,
-          fallback: true
-        }
+          fallback: true,
+        },
       };
       return acc;
     },
@@ -117,8 +117,8 @@ export function buildSearchOptionsFromConfig() {
       raw: {},
       snippet: {
         size: 100,
-        fallback: true
-      }
+        fallback: true,
+      },
     };
   }
 
@@ -127,8 +127,8 @@ export function buildSearchOptionsFromConfig() {
       raw: {},
       snippet: {
         size: 100,
-        fallback: true
-      }
+        fallback: true,
+      },
     };
   }
 
@@ -137,8 +137,8 @@ export function buildSearchOptionsFromConfig() {
       raw: {},
       snippet: {
         size: 100,
-        fallback: true
-      }
+        fallback: true,
+      },
     };
   }
 
@@ -155,7 +155,7 @@ export function buildFacetConfigFromConfig() {
     acc = acc || {};
     acc[n] = {
       type: "value",
-      size: 100
+      size: 100,
     };
     return acc;
   }, undefined);
@@ -169,21 +169,21 @@ export function buildSortOptionsFromConfig() {
     {
       name: "Relevance",
       value: "",
-      direction: ""
+      direction: "",
     },
     ...(config.sortFields || []).reduce((acc, sortField) => {
       acc.push({
         name: `${capitalizeFirstLetter(sortField)} ASC`,
         value: sortField,
-        direction: "asc"
+        direction: "asc",
       });
       acc.push({
         name: `${capitalizeFirstLetter(sortField)} DESC`,
         value: sortField,
-        direction: "desc"
+        direction: "desc",
       });
       return acc;
-    }, [])
+    }, []),
   ];
 }
 
@@ -201,9 +201,9 @@ export function buildAutocompleteQueryConfig() {
     suggestions: {
       types: {
         documents: {
-          fields: getConfig().querySuggestFields
-        }
-      }
-    }
+          fields: getConfig().querySuggestFields,
+        },
+      },
+    },
   };
 }

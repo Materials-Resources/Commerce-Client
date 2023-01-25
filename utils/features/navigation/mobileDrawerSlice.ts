@@ -1,28 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const mobileDrawerSlice = createSlice({
-    name: 'mobileDrawerVisible',
-    initialState: {
-        value: false,
+  name: "mobileDrawerVisible",
+  initialState: {
+    value: false,
+  },
+  reducers: {
+    close: (state) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      state.value = false;
     },
-    reducers: {
-        close: (state) => {
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the Immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
-            state.value = false
-        },
-        open: (state) => {
-            state.value = true
-        },
-        toggle: (state, action) => {
-            state.value = !state.value
-        },
+    open: (state) => {
+      state.value = true;
     },
-})
+    toggle: (state, action) => {
+      state.value = !state.value;
+    },
+  },
+});
 
 // Action creators are generated for each case reducer function
-export const { close, open, toggle } = mobileDrawerSlice.actions
+export const { close, open, toggle } = mobileDrawerSlice.actions;
 
-export default mobileDrawerSlice.reducer
+export default mobileDrawerSlice.reducer;

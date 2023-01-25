@@ -1,19 +1,18 @@
 interface userI {
-    firstName: string,
-    lastName: string,
-    customerId: string,
-    profileImg: string
+  firstName: string;
+  lastName: string;
+  customerId: string;
+  profileImg: string;
 }
 
 interface cartI {
-    items: [cartItemsI],
-    cartTotal: number,
-
+  items: [cartItemsI];
+  cartTotal: number;
 }
 interface cartItemsI {
-    itemId: string,
-    price: string,
-    productImg: string
+  itemId: string;
+  price: string;
+  productImg: string;
 }
 
-export type { userI, cartI }
+export type { userI, cartI };

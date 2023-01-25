@@ -1,13 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
 const About: NextPage = () => {
+  return <></>;
+};
 
-
-    return (
-        <>
-
-        </>
-    )
-}
-
-export default About
+export default About;

@@ -2,20 +2,19 @@
 module.exports = {
   content: [
     "./pages/**/*.{js,jsx,ts,tsx}",
-    "./Components/*.{js,jsx,ts,tsx}"
+    "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
-      colors:{
-        'safety-red':'#e92127',
-        'calm-blue': '#293862',
-        'raisin-black': '#1F2233',
-        'laurel': '#BAD2B2',
-        'mountbatten': '#94849B'
-      }
+      colors: {
+        "safety-red": "#e92127",
+        "space-caddet": {
+          dark: "#293862",
+          light: "#D4D7E0",
+        },
+        "raisin-black": "#1F2233",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
-}
+  plugins: [require("tailwindcss"), require("autoprefixer")],
+};

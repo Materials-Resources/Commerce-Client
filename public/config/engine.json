@@ -10,12 +10,8 @@
     "inv_mast_uid",
     "id"
   ],
-  "sortFields": [
-
-  ],
-  "facets": [
-    "product_group_id"
-  ],
+  "sortFields": [],
+  "facets": ["product_group_id"],
   "titleField": "item_id",
   "urlField": "inv_mast_uid"
 }
