@@ -29,10 +29,6 @@ export default function SearchResult(result: Result) {
             <p>View Product</p>
           </div>
         </Link>
-        <div className={"flex flex-row gap-3"}>
-          <CheckCircleIcon className={"w-5 text-green-600"} />
-          <p>In stock</p>
-        </div>
       </div>
     </div>
   );
