@@ -4,10 +4,7 @@ import { graphql } from "../../gql";
 import { useEffect } from "react";
 import {
   ArrowLeftCircleIcon,
-  MinusCircleIcon,
-  PlusCircleIcon,
 } from "@heroicons/react/24/outline";
-import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 import PurchaseForm from "../../components/PurchaseForm";
 
 const getProductById = graphql(/* GraphQL */ `

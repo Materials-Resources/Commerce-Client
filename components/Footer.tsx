@@ -33,7 +33,7 @@ const footerNavigation = {
 
 export const Footer: NextComponentType = () => {
   return (
-    <>
+    <div className={'mb-0 w-full bottom-0'}>
       <footer aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -101,40 +101,6 @@ export const Footer: NextComponentType = () => {
                 </div>
               </div>
             </div>
-
-            <div className="flex justify-center">
-              <div className="flex  w-1/2 items-center rounded-lg bg-white p-6 text-black sm:p-10">
-                <div className="mx-auto max-w-sm">
-                  <h3 className="text-calm-blue font-semibold">
-                    Sign up for our newsletter
-                  </h3>
-                  <p className="text-calm-blue mt-2 text-sm">
-                    The latest news, articles, and resources, sent to your inbox
-                    weekly.
-                  </p>
-                  <form className="mt-4 sm:mt-6 sm:flex">
-                    <label htmlFor="email-address" className="sr-only">
-                      Email address
-                    </label>
-                    <input
-                      id="email-address"
-                      type="text"
-                      autoComplete="email"
-                      required
-                      className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                    />
-                    <div className="mt-3 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-                      <button
-                        type="submit"
-                        className="flex w-full items-center justify-center rounded-md border border-transparent bg-safety-red py-2 px-4 text-base font-medium text-white shadow-sm hover:bg-raisin-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white"
-                      >
-                        Sign up
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="py-10 md:flex md:items-center md:justify-between">
@@ -160,6 +126,6 @@ export const Footer: NextComponentType = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 };

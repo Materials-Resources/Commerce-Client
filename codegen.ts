@@ -1,13 +1,20 @@
 import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
-  schema: "http://localhost:8080/query",
+  schema: [
+    {
+      "http://127.0.0.1:4000/": {
+        method: 'POST',
+      }
+    }
+  ],
   documents: ["pages/**/*.tsx"],
   ignoreNoDocuments: false,
   generates: {
     "./gql/": {
       preset: "client",
-      plugins: [],
+      plugins: ['typescript', 'typescript-resolvers'],
+      config: { federation: true }
     },
   },
 };

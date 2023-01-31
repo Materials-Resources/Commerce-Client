@@ -1,17 +1,21 @@
 import { useRouter } from "next/router";
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { graphql } from "../gql/";
 import { FormEvent, useEffect, useState } from "react";
 import SearchResult from "../components/search/SearchResult";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import Facets from "../components/search/Facets";
+import SearchPageSelector from "../components/search/Page";
 
 const searchProductByIdDocument = graphql(/* GraphQL */ `
   query SearchProducts($query: String!) {
     search(query: $query) {
-      ItemId
-      ItemDesc
-      InvMastUid
+      CurrentPage
+      TotalPages
+      Products {
+        InvMastUid
+        ItemId
+        ItemDesc
+      }
     }
   }
 `);
@@ -51,6 +55,11 @@ const Results = () => {
           />
         </div>
       </form>
+      {error && (
+          <div>
+            <p>There was an error loading search results</p>
+          </div>
+      )}
       {data && (
         <>
           <p className={"py-5 text-5xl font-bold"}>
@@ -63,7 +72,7 @@ const Results = () => {
                 "col-span-4 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4"
               }
             >
-              {data?.search.map(
+              {data?.search.Products?.map(
                 (result: {
                   ItemId: string;
                   ItemDesc: string;
@@ -80,6 +89,7 @@ const Results = () => {
               )}
             </div>
           </div>
+          <SearchPageSelector currentPage={data.search.CurrentPage} totalPages={data.search.TotalPages} />
         </>
       )}
     </div>
